@@ -4,6 +4,10 @@ BlogRailr::Application.routes.draw do
 
   get "home/index"
   root :to => 'home#index'
+
+  resources :posts do
+    resources :comments
+  end
   
 
   # The priority is based upon order of creation:
