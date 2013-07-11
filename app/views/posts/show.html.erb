@@ -1,25 +1,32 @@
 <p id="notice"><%= notice %></p>
  
 <p>
-  <b>Name:</b>
-  <%= @post.name %>
+  <h2><%= @post.title %></h2>
 </p>
  
 <p>
-  <b>Title:</b>
-  <%= @post.title %>
+  <h4><%= @post.content %></h4>
 </p>
- 
+
+<br/><br/><br/>
+
 <p>
-  <b>Content:</b>
-  <%= @post.content %>
+  Author:
+  <b><%= @post.name %></b>
 </p>
- 
-<h2>Comments</h2>
+
+
+<p>
+	Tags:
+	<b><%= join_tags(@post) %>
+</p>
+
+<br/>
+<h4>Comments</h4>
 <%= render @post.comments %>
 
-
-<h2>Add a comment:</h2>
+<br/>
+<h4>Add a comment:</h4>
 <%= render "comments/form" %>
 
 <br/>
